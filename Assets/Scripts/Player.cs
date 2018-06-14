@@ -128,6 +128,11 @@ public class Player : Character {
         Instantiate(p_levelUp, pos, Quaternion.identity, transform);
     }
 
+    public void FootDown()
+    {
+        transform.Find("FootSteps").GetComponent<ParticleSystem>().Emit(1);
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Enemy")
